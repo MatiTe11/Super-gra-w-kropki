@@ -15,6 +15,8 @@ namespace Super_gra
     /// <summary>
     /// This is the main type for your game
     /// </summary>
+    /// dhsgggggsjgfjyfgs
+    /// 
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
