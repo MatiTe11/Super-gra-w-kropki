@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Super_gra
 {
+    ///Twoja stara
     /// <summary>
     /// This is the main type for your game
     /// </summary>
