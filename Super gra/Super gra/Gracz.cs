@@ -76,9 +76,27 @@ namespace Super_gra
            //// kolizja z przeszkoda
            for (int i = 0; i < listaPrzeszkod.Count; i++)
            {
-               if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo )
+               if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo && pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaPrawo && pozycjaGracza.Y + wymiaryGracza.Y > listaPrzeszkod[i].PrzeszkodaGora && pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaDol)
                {
+                   //if()
+                   if(pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaLewo)
+                   {
+                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
+                   }
+                   else if (pozycjaGracza.X > listaPrzeszkod[i].PrzeszkodaLewo)
+                   {
+                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
+                   }
 
+                   else if (pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaGora)
+                   {
+                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+                   }
+                   else if (pozycjaGracza.Y > listaPrzeszkod[i].PrzeszkodaGora)
+                   {
+                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
+                   }
+                   
                }
            }
            
