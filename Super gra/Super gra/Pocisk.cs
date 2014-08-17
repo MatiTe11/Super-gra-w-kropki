@@ -39,7 +39,7 @@ namespace Super_gra
        {
            mysz = Mouse.GetState();
 
-           if (gracz.X > (float)mysz.X)
+           if (gracz.X > mysz.X)
            {
 
                wynikNaX = (float)gracz.X - (float)mysz.X;
@@ -51,7 +51,7 @@ namespace Super_gra
                wynikNaX = (float)mysz.X - (float)gracz.X;
            }
 
-           if (gracz.Y > (float)mysz.Y)
+           if (gracz.Y > mysz.Y)
            {
 
                wynikNaY = (float)gracz.Y - (float)mysz.Y;
