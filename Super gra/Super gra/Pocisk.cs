@@ -47,12 +47,13 @@ namespace Super_gra
            pozycja.Y = gracz.Y;
 
            //if(mysz. X > gracz.X)
-               predkoscP.X = (wynikNaX / ((uint)wynikNaX + (uint)wynikNaY)) * predkosc;
+               predkoscP.X = -(wynikNaX / (Math.Abs(wynikNaX) + Math.Abs(wynikNaY))) * predkosc;
           // else
                //predkoscP.X = 0 - ((wynikNaX / (wynikNaX + wynikNaY)) * predkosc);
 
+
            //if(mysz.Y > gracz.Y)
-                predkoscP.Y = (wynikNaY / ((uint)wynikNaY + (uint)wynikNaX)) * predkosc;
+                predkoscP.Y = -(wynikNaY / (Math.Abs(wynikNaY) + Math.Abs(wynikNaX))) * predkosc;
            //else
               // predkoscP.Y = 0 - ((wynikNaY / (wynikNaX + wynikNaY)) * predkosc);
 
