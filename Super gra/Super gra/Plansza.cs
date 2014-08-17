@@ -44,10 +44,11 @@ namespace Super_gra
                     spriteBatch.Draw(przeszkoda, new Vector2(listaPrzeszkod[i].pozycjaPrzeszkody.X, listaPrzeszkod[i].pozycjaPrzeszkody.Y), Color.White);
                 }
 
-                for (int i = 0; i < gracz.listaPociskow.Count; i++)
-                {
-                    spriteBatch.Draw(pocisk, gracz.listaPociskow[i].pozycja, Color.White);
-                }
+              
+            }
+            for (int i = 0; i < gracz.listaPociskow.Count; i++)
+            {
+                spriteBatch.Draw(pocisk, gracz.listaPociskow[i].pozycja, Color.White);
             }
             spriteBatch.End();
             
