@@ -20,9 +20,13 @@ namespace Super_gra
        public bool Visible = false;
        Gracz gracz;
        public Vector2 pozycja;
-       //public Vector2 predkosc;
-       public int predkość;
+       public Vector2 predkoscP;
+       public int predkosc;
        public Texture2D pocisk;
+       MouseState mysz;
+       public int wynikNaX;
+       public int wynikNaY;
+       
 
 
        public Pocisk(Gracz gracz)
@@ -30,8 +34,38 @@ namespace Super_gra
            this.gracz = gracz;
        }
 
+        public void Update(GameTime gameTime)
 
-  
+       {
+            mysz = Mouse.GetState();
+
+           if(gracz.pozycjaGracza.X > mysz.X)
+           {
+
+               wynikNaX = (int)gracz.pozycjaGracza.X - (int)mysz.X;
+
+           }
+
+           else
+           {
+               wynikNaX = (int)mysz.X - (int)gracz.pozycjaGracza.X;
+           }
+
+           if (gracz.pozycjaGracza.Y > mysz.Y)
+           {
+
+               wynikNaY = (int)gracz.pozycjaGracza.Y - (int)mysz.Y;
+
+           }
+
+           else
+           {
+               wynikNaY = (int)mysz.Y - (int)gracz.pozycjaGracza.Y;
+           }
+
+       }
+       
+
 
         public void LoadContent(ContentManager Content)
         {
