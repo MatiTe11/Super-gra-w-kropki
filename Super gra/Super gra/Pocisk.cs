@@ -18,54 +18,59 @@ namespace Super_gra
        const int zasieg = 500;
 
        public bool Visible = false;
-       Gracz gracz;
+       //Vector2 gracz;
        public Vector2 pozycja;
        public Vector2 predkoscP;
        public int predkosc = 450;
        public Texture2D pocisk;
        MouseState mysz;
-       public int wynikNaX;
-       public int wynikNaY;
+       public float wynikNaX;
+       public float wynikNaY;
        
 
 
-       public Pocisk(Gracz gracz)
+       public Pocisk()
        {
-           this.gracz = gracz;
+           //this.gracz = gracz;
+       }
+
+
+       public void Init(Vector2 gracz)
+       {
+           mysz = Mouse.GetState();
+
+           if (gracz.X > mysz.X)
+           {
+
+               wynikNaX = (int)gracz.X - (int)mysz.X;
+
+           }
+
+           else
+           {
+               wynikNaX = (int)mysz.X - (int)gracz.X;
+           }
+
+           if (gracz.Y > mysz.Y)
+           {
+
+               wynikNaY = (int)gracz.Y - (int)mysz.Y;
+
+           }
+
+           else
+           {
+               wynikNaY = mysz.Y - gracz.Y;
+           }
+           pozycja.X = gracz.X;
+           pozycja.Y = gracz.Y;
+           predkoscP.X = (wynikNaX / wynikNaY) * predkosc;
+           predkoscP.Y = (wynikNaY / wynikNaX) * predkosc;
        }
 
         public void Update(GameTime gameTime)
 
        {
-            mysz = Mouse.GetState();
-
-           if(gracz.pozycjaGracza.X > mysz.X)
-           {
-
-               wynikNaX = (int)gracz.pozycjaGracza.X - (int)mysz.X;
-
-           }
-
-           else
-           {
-               wynikNaX = (int)mysz.X - (int)gracz.pozycjaGracza.X;
-           }
-
-           if (gracz.pozycjaGracza.Y > mysz.Y)
-           {
-
-               wynikNaY = (int)gracz.pozycjaGracza.Y - (int)mysz.Y;
-
-           }
-
-           else
-           {
-               wynikNaY = (int)mysz.Y - (int)gracz.pozycjaGracza.Y;
-           }
-
-           predkoscP.X = (wynikNaX / wynikNaY) * predkosc;
-           predkoscP.Y = (wynikNaY / wynikNaX) * predkosc;
-
 
            pozycja.X += predkoscP.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
            pozycja.Y += predkoscP.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
