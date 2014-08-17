@@ -18,12 +18,16 @@ namespace Super_gra
        public Vector2 pozycjaGracza;
        public Vector2 wymiaryGracza = new Vector2(70);
        KeyboardState klawiatura;
+       MouseState mysz;
+       MouseState prevMysz;
        int predkosc = 300;
        int iloscPrzeszkod;
+       List<Przeszkoda> listaPrzeszkod;
 
 
-       public Gracz(Vector2 pozycja)
+       public Gracz(Vector2 pozycja,  List<Przeszkoda> listaPrzeszkod)
        {
+           this.listaPrzeszkod = listaPrzeszkod;
            this.pozycjaGracza = pozycja;
        }
 
@@ -31,6 +35,7 @@ namespace Super_gra
        public void Update(GameTime gameTime)
        {
            klawiatura = Keyboard.GetState();
+           mysz = Mouse.GetState();
 
            if (klawiatura.IsKeyDown(Keys.D))
                pozycjaGracza.X += predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -41,7 +46,12 @@ namespace Super_gra
            else if (klawiatura.IsKeyDown(Keys.W))
                pozycjaGracza.Y -= predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-
+           if(mysz.RightButton == ButtonState.Pressed && prevMysz.RightButton == ButtonState.Released && iloscPrzeszkod != 0)
+           {
+               listaPrzeszkod.Add(new Przeszkoda(new Vector2(mysz.X,mysz.Y)));
+               iloscPrzeszkod--;
+           }
+           
        }
 
 
