@@ -14,5 +14,6 @@ namespace Super_gra
 {
     class Przeszkoda
     {
+
     }
 }
