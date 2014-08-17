@@ -12,10 +12,10 @@ using Microsoft.Xna.Framework.Media;
 namespace Super_gra
 {
     ///Twoja stara zapierdala
-    /// <summary>
+    /// <dupa>
     /// This is the main type for your game
     /// </summary>
-    /// dhsgggggsjgfjyfgs
+    /// dhsgggggsjgfjyfgsg
     /// 
     public class Game1 : Microsoft.Xna.Framework.Game
     {
