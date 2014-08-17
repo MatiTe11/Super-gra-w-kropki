@@ -16,6 +16,7 @@ namespace Super_gra
     {
         //
        public Vector2 pozycjaGracza;
+       Vector2 prevPozycja;
        public Vector2 wymiaryGracza = new Vector2(70);
        KeyboardState klawiatura;
        MouseState mysz;
@@ -44,6 +45,7 @@ namespace Super_gra
            klawiatura = Keyboard.GetState();
            prevMysz = mysz;
            mysz = Mouse.GetState();
+           prevPozycja = pozycjaGracza;
 
            if (klawiatura.IsKeyDown(Keys.D))
                pozycjaGracza.X += predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -79,24 +81,40 @@ namespace Super_gra
                if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo && pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaPrawo && pozycjaGracza.Y + wymiaryGracza.Y > listaPrzeszkod[i].PrzeszkodaGora && pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaDol)
                {
                    //if()
-                   if(pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaLewo)
-                   {
-                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
-                   }
-                   else if (pozycjaGracza.X > listaPrzeszkod[i].PrzeszkodaLewo)
-                   {
-                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
-                   }
+                   //if(pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaLewo)
+                   //{
+                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
+                   //}
+                   //else if (pozycjaGracza.X > listaPrzeszkod[i].PrzeszkodaLewo)
+                   //{
+                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
+                   //}
 
-                   else if (pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaGora)
-                   {
-                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
-                   }
-                   else if (pozycjaGracza.Y > listaPrzeszkod[i].PrzeszkodaGora)
-                   {
-                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
-                   }
+                   //if (pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaGora)
+                   //{
+                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+                   //}
+                   //else if (pozycjaGracza.Y > listaPrzeszkod[i].PrzeszkodaGora)
+                   //{
+                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
+                   //}
                    
+
+
+
+
+                   if((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
+
+                   if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
+
+                   if ((prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
+
+                   if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+
                }
            }
            
