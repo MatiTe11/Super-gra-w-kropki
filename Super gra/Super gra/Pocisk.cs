@@ -14,5 +14,19 @@ namespace Super_gra
 {
     class Pocisk
     {
+
+        const int zasieg = 500;
+
+        public bool Visible = false;
+
+        Vector2 pozycja_startowa;
+        Vector2 predkosc;
+        Vector2 kierunek;
+
+        public void LoadContent(ContentManager Content)
+        {
+            base.LoadContent(Content, "Pocisk");
+        }
+
     }
 }
