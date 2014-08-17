@@ -14,5 +14,20 @@ namespace Super_gra
 {
     class Pocisk
     {
+
+        const int zasieg = 500;
+
+        public bool Visible = false;
+
+        Vector2 pozycja_startowa;
+        Vector2 predkosc;
+        Vector2 kierunek;
+        Texture2D pocisk;
+
+        public void LoadContent(ContentManager Content)
+        {
+            pocisk = Content.Load<Texture2D>("Pocisk");
+        }
+
     }
 }
