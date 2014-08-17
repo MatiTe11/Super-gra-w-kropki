@@ -14,8 +14,8 @@ namespace Super_gra
 {
     public class Przeszkoda
     {
-        Vector2 pozycjaPrzeszkody;
-        Vector2 wymiaryPrzeszkody = new Vector2(100);
+       public Vector2 pozycjaPrzeszkody;
+       public Vector2 wymiaryPrzeszkody = new Vector2(100);
 
 
 
