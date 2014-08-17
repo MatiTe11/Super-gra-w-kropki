@@ -24,7 +24,7 @@ namespace Super_gra
        int iloscPrzeszkod;
        public Texture2D tekstura;
        //List<Przeszkoda> listaPrzeszkod;
-       List<Pocisk> listaPociskow;
+       public List<Pocisk> listaPociskow = new List<Pocisk>();
 
 
        public Gracz(Vector2 pozycja)
@@ -64,13 +64,22 @@ namespace Super_gra
 
            if(mysz.LeftButton == ButtonState.Pressed && prevMysz.LeftButton == ButtonState.Released)
            {
-               listaPociskow.Add(new Pocisk(new Vector2()))
+               listaPociskow.Add(new Pocisk());
+               listaPociskow[listaPociskow.Count -  1].Init(pozycjaGracza);
+           }
+
+           for (int i = 0; i < listaPociskow.Count; i++)
+           {
+               listaPociskow[i].Update(gameTime);
            }
 
            //// kolizja z przeszkoda
            for (int i = 0; i < listaPrzeszkod.Count; i++)
            {
                if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo )
+               {
+
+               }
            }
            
        }
