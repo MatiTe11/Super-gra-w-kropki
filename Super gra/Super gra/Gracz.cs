@@ -22,17 +22,17 @@ namespace Super_gra
        MouseState prevMysz;
        int predkosc = 300;
        int iloscPrzeszkod;
-       List<Przeszkoda> listaPrzeszkod;
+       //List<Przeszkoda> listaPrzeszkod;
 
 
-       public Gracz(Vector2 pozycja,  List<Przeszkoda> listaPrzeszkod)
+       public Gracz(Vector2 pozycja)
        {
-           this.listaPrzeszkod = listaPrzeszkod;
+           //this.listaPrzeszkod = listaPrzeszkod;
            this.pozycjaGracza = pozycja;
        }
 
 
-       public void Update(GameTime gameTime)
+       public void Update(GameTime gameTime, List<Przeszkoda> listaPrzeszkod)
        {
            klawiatura = Keyboard.GetState();
            mysz = Mouse.GetState();
