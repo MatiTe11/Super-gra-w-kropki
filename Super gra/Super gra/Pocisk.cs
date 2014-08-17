@@ -18,11 +18,17 @@ namespace Super_gra
        const int zasieg = 500;
 
        public bool Visible = false;
-
+       Gracz gracz;
        public Vector2 pozycja;
-       public Vector2 predkosc;
-       public Vector2 kierunek;
+       //public Vector2 predkosc;
+       public int predkość;
        public Texture2D pocisk;
+
+
+       public Pocisk(Gracz gracz)
+       {
+           this.gracz = gracz;
+       }
 
 
   
