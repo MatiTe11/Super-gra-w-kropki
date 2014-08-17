@@ -55,8 +55,16 @@ namespace Super_gra
 
            if(mysz.RightButton == ButtonState.Pressed && prevMysz.RightButton == ButtonState.Released && iloscPrzeszkod != 0)
            {
-               listaPrzeszkod.Add(new Przeszkoda(new Vector2(mysz.X,mysz.Y)));
+               listaPrzeszkod.Add(new Przeszkoda(new Vector2(mysz.X - 50,mysz.Y - 50)));
                iloscPrzeszkod--;
+           }
+
+
+
+           //// kolizja z przeszkoda
+           for (int i = 0; i < listaPrzeszkod.Count; i++)
+           {
+               if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo )
            }
            
        }
