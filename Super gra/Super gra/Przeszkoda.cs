@@ -16,39 +16,30 @@ namespace Super_gra
     {
         Vector2 pozycjaPrzeszkody;
         Vector2 wymiaryPrzeszkody = new Vector2(100);
-        MouseState mysz;
-        MouseState prevMysz;
+
+
 
         public Przeszkoda(Vector2 pozycja)
         {
             this.pozycjaPrzeszkody = pozycja;
         }
 
-
-        public void StawianiePrzeszkody()
-        {
-            prevMysz = mysz;
-            mysz = Mouse.GetState();
-            if (mysz.RightButton == ButtonState.Pressed && prevMysz.RightButton == ButtonState.Released)
-            {
-                pozycjaPrzeszkody.X = mysz.X;
-                pozycjaPrzeszkody.Y = mysz.Y;
-            }
-
-        }
-
+        //up
         public float PrzeszkodaGora
         {
             get { return pozycjaPrzeszkody.Y; }
         }
+        //down
         public float PrzeszkodaDol
         {
             get { return pozycjaPrzeszkody.Y + wymiaryPrzeszkody.Y; }
         }
+        //left
         public float PrzeszkodaLewo
         {
             get { return pozycjaPrzeszkody.X; }
         }
+        //right
         public float PrzeszkodaPrawo
         {
             get { return pozycjaPrzeszkody.X + wymiaryPrzeszkody.X; }
