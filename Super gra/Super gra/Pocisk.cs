@@ -29,5 +29,6 @@ namespace Super_gra
             pocisk = Content.Load<Texture2D>("Pocisk");
         }
 
+        ///koment
     }
 }
