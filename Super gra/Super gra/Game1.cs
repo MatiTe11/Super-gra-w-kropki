@@ -87,14 +87,7 @@ namespace Super_gra
         }
 
 
-        public void UpdatePocisk()
-        {
-            foreach (Pocisk pocisk in pocisk)
-            {
-                pocisk.pozycja += pocisk.predkosc;
-                if(Vector2.Distance(pocisk.pozycja, pozycjaGracza))
-            }
-        }
+        
 
 
 
