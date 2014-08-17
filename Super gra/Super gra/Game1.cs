@@ -27,8 +27,9 @@ namespace Super_gra
 
         //Pocisk
 
-        List<Pocisk> pocisk = new List<Pocisk>();
+        //List<Pocisk> pocisk = new List<Pocisk>();
 
+        Plansza plansza = new Plansza();
 
         public Game1()
         {
@@ -57,7 +58,7 @@ namespace Super_gra
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            plansza.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -82,7 +83,7 @@ namespace Super_gra
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            plansza.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -100,7 +101,7 @@ namespace Super_gra
             GraphicsDevice.Clear(Color.Gray);
 
             // TODO: Add your drawing code here
-
+            plansza.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }
