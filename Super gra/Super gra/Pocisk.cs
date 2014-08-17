@@ -21,7 +21,7 @@ namespace Super_gra
        Gracz gracz;
        public Vector2 pozycja;
        public Vector2 predkoscP;
-       public int predkosc;
+       public int predkosc = 450;
        public Texture2D pocisk;
        MouseState mysz;
        public int wynikNaX;
@@ -62,6 +62,9 @@ namespace Super_gra
            {
                wynikNaY = (int)mysz.Y - (int)gracz.pozycjaGracza.Y;
            }
+
+           predkoscP.X = (wynikNaX / wynikNaY) * predkosc;
+           predkoscP.Y = (wynikNaY / wynikNaX) * predkosc;
 
        }
        
