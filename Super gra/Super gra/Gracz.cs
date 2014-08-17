@@ -103,17 +103,19 @@ namespace Super_gra
 
 
 
-                   if((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
-                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
+                   //if((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
 
-                   if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
-                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
+                   //if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
 
-                   if ((prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
-                       pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
+                   //if ((prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X > listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y > listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
 
-                   if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
-                       pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+                   //if ((prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X > listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol) || (prevPozycja.X < listaPrzeszkod[i].PrzeszkodaLewo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaGora && prevPozycja.X < listaPrzeszkod[i].PrzeszkodaPrawo && prevPozycja.Y < listaPrzeszkod[i].PrzeszkodaDol))
+                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+
+
 
                }
            }
