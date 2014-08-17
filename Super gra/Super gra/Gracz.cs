@@ -84,24 +84,29 @@ namespace Super_gra
            {
                if (pozycjaGracza.X + wymiaryGracza.X > listaPrzeszkod[i].PrzeszkodaLewo && pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaPrawo && pozycjaGracza.Y + wymiaryGracza.Y > listaPrzeszkod[i].PrzeszkodaGora && pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaDol)
                {
-                   //if()
-                   //if(pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaLewo)
-                   //{
-                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
-                   //}
-                   //else if (pozycjaGracza.X > listaPrzeszkod[i].PrzeszkodaLewo)
-                   //{
-                   //    pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
-                   //}
+                   if(prevPozycja.X + wymiaryGracza.X <= listaPrzeszkod[i].PrzeszkodaLewo || prevPozycja.X >= listaPrzeszkod[i].PrzeszkodaPrawo)
+                   {
+                       if (pozycjaGracza.X < listaPrzeszkod[i].PrzeszkodaLewo)
+                       {
+                           pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaLewo - wymiaryGracza.X;
+                       }
+                       else if (pozycjaGracza.X > listaPrzeszkod[i].PrzeszkodaLewo)
+                       {
+                           pozycjaGracza.X = listaPrzeszkod[i].PrzeszkodaPrawo;
+                       }
+                   }
 
-                   //if (pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaGora)
-                   //{
-                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
-                   //}
-                   //else if (pozycjaGracza.Y > listaPrzeszkod[i].PrzeszkodaGora)
-                   //{
-                   //    pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
-                   //}
+                   if(prevPozycja.Y + wymiaryGracza.Y <= listaPrzeszkod[i].PrzeszkodaGora || prevPozycja.Y >= listaPrzeszkod[i].PrzeszkodaDol)
+                   {
+                       if (pozycjaGracza.Y < listaPrzeszkod[i].PrzeszkodaGora)
+                       {
+                           pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaGora - wymiaryGracza.Y;
+                       }
+                       else if (pozycjaGracza.Y > listaPrzeszkod[i].PrzeszkodaGora)
+                       {
+                           pozycjaGracza.Y = listaPrzeszkod[i].PrzeszkodaDol;
+                       }
+                   }
                    
 
 
