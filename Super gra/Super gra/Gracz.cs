@@ -22,6 +22,7 @@ namespace Super_gra
        MouseState prevMysz;
        int predkosc = 300;
        int iloscPrzeszkod;
+       public Texture2D tekstura;
        //List<Przeszkoda> listaPrzeszkod;
 
 
@@ -31,6 +32,10 @@ namespace Super_gra
            this.pozycjaGracza = pozycja;
        }
 
+       public void LoadContent(ContentManager Content)
+       {
+           tekstura = Content.Load<Texture2D>("Gracz");
+       }
 
        public void Update(GameTime gameTime, List<Przeszkoda> listaPrzeszkod)
        {
