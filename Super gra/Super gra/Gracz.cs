@@ -16,7 +16,34 @@ namespace Super_gra
     {
         //
        public Vector2 pozycjaGracza;
-       public Vector2 wymiaryGracza;
+       public Vector2 wymiaryGracza = new Vector2(70);
+       KeyboardState klawiatura;
+       int predkosc = 300;
+       int iloscPrzeszkod;
+
+
+       public Gracz(Vector2 pozycja)
+       {
+           this.pozycjaGracza = pozycja;
+       }
+
+
+       public void Update(GameTime gameTime)
+       {
+           klawiatura = Keyboard.GetState();
+
+           if (klawiatura.IsKeyDown(Keys.D))
+               pozycjaGracza.X += predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
+           else if (klawiatura.IsKeyDown(Keys.A))
+               pozycjaGracza.X -= predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
+           if (klawiatura.IsKeyDown(Keys.S))
+               pozycjaGracza.Y += predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
+           else if (klawiatura.IsKeyDown(Keys.W))
+               pozycjaGracza.Y -= predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+
+       }
+
 
     }
 }
