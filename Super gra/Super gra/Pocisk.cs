@@ -66,6 +66,10 @@ namespace Super_gra
            predkoscP.X = (wynikNaX / wynikNaY) * predkosc;
            predkoscP.Y = (wynikNaY / wynikNaX) * predkosc;
 
+
+           pozycja.X += predkoscP.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
+           pozycja.Y += predkoscP.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
        }
        
 
