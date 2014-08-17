@@ -39,33 +39,23 @@ namespace Super_gra
        {
            mysz = Mouse.GetState();
 
-           if (gracz.X > mysz.X)
-           {
+           wynikNaX = gracz.X - mysz.X;
+           wynikNaY = gracz.Y - mysz.Y;
 
-               wynikNaX = (float)gracz.X - (float)mysz.X;
-
-           }
-
-           else
-           {
-               wynikNaX = (float)mysz.X - (float)gracz.X;
-           }
-
-           if (gracz.Y > mysz.Y)
-           {
-
-               wynikNaY = (float)gracz.Y - (float)mysz.Y;
-
-           }
-
-           else
-           {
-               wynikNaY = (float)mysz.Y - (float)gracz.Y;
-           }
+       
            pozycja.X = gracz.X;
            pozycja.Y = gracz.Y;
-           predkoscP.X = (wynikNaX / wynikNaY) * predkosc;
-           predkoscP.Y = (wynikNaY / wynikNaX) * predkosc;
+
+           //if(mysz. X > gracz.X)
+               predkoscP.X = (wynikNaX / ((uint)wynikNaX + (uint)wynikNaY)) * predkosc;
+          // else
+               //predkoscP.X = 0 - ((wynikNaX / (wynikNaX + wynikNaY)) * predkosc);
+
+           //if(mysz.Y > gracz.Y)
+                predkoscP.Y = (wynikNaY / ((uint)wynikNaY + (uint)wynikNaX)) * predkosc;
+           //else
+              // predkoscP.Y = 0 - ((wynikNaY / (wynikNaX + wynikNaY)) * predkosc);
+
        }
 
         public void Update(GameTime gameTime)
