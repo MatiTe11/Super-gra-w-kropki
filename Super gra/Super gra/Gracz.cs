@@ -16,5 +16,7 @@ namespace Super_gra
     {
         Vector2 pozycjaGracza;
         Vector2 wymiaryGracza;
+
+        ///Sprawdzam czy działa
     }
 }
