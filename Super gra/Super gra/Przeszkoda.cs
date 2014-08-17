@@ -14,6 +14,19 @@ namespace Super_gra
 {
     class Przeszkoda
     {
+        Vector2 pozycjaPrzeszkody;
+        Vector2 wymiaryPrzeszkody = new Vector2(100);
+        MouseState mysz;
 
+        public Przeszkoda(Vector2 pozycja)
+        {
+            this.pozycjaPrzeszkody = pozycja;
+        }
+
+
+        public void StawianiePrzeszkody()
+        {
+
+        }
     }
 }
