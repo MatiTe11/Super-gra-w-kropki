@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super gra", "Super gra\Super gra\Super gra.csproj", "{CB3FE8A0-1178-4EAD-BCC2-5A1FB4989C27}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Super graContent", "Super gra\Super graContent\Super graContent.contentproj", "{7CD3451D-3274-45B6-A27F-37D60E343CD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super graContent", "Super gra\Super graContent\Super graContent.contentproj", "{7CD3451D-3274-45B6-A27F-37D60E343CD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
