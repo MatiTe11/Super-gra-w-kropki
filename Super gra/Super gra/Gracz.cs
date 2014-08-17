@@ -12,11 +12,11 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Super_gra
 {
-    class Gracz
+   public class Gracz
     {
         //
-        Vector2 pozycjaGracza;
-        Vector2 wymiaryGracza;
+       public Vector2 pozycjaGracza;
+       public Vector2 wymiaryGracza;
 
     }
 }
