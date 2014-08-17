@@ -22,6 +22,14 @@ namespace Super_gra
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+
+
+
+        //Pocisk
+
+        List<Pocisk> pocisk = new List<Pocisk>();
+
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -77,6 +85,18 @@ namespace Super_gra
 
             base.Update(gameTime);
         }
+
+
+        public void UpdatePocisk()
+        {
+            foreach (Pocisk pocisk in pocisk)
+            {
+                pocisk.pozycja += pocisk.predkosc;
+                if(Vector2.Distance(pocisk.pozycja, pozycjaGracza))
+            }
+        }
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
