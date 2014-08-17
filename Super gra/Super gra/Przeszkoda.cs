@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Super_gra
 {
-    class Przeszkoda
+    public class Przeszkoda
     {
         Vector2 pozycjaPrzeszkody;
         Vector2 wymiaryPrzeszkody = new Vector2(100);
