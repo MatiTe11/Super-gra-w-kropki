@@ -56,24 +56,28 @@ namespace Super_gra
            else if (klawiatura.IsKeyDown(Keys.W))
                pozycjaGracza.Y -= predkosc * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-           if(mysz.RightButton == ButtonState.Pressed && prevMysz.RightButton == ButtonState.Released && iloscPrzeszkod != 0)
-           {
-               listaPrzeszkod.Add(new Przeszkoda(new Vector2(mysz.X - 50,mysz.Y - 50)));
-               iloscPrzeszkod--;
-           }
-
            //strzał
 
-           if(mysz.LeftButton == ButtonState.Pressed && prevMysz.LeftButton == ButtonState.Released)
+           if (mysz.LeftButton == ButtonState.Pressed && prevMysz.LeftButton == ButtonState.Released)
            {
                listaPociskow.Add(new Pocisk());
-               listaPociskow[listaPociskow.Count -  1].Init(pozycjaGracza);
+               listaPociskow[listaPociskow.Count - 1].Init(pozycjaGracza);
            }
 
            for (int i = 0; i < listaPociskow.Count; i++)
            {
                listaPociskow[i].Update(gameTime);
            }
+
+           //stawianie kloca
+
+           if(mysz.RightButton == ButtonState.Pressed && prevMysz.RightButton == ButtonState.Released && iloscPrzeszkod != 0)
+           {
+               listaPrzeszkod.Add(new Przeszkoda(new Vector2(mysz.X - 50,mysz.Y - 50)));
+               iloscPrzeszkod--;
+           }
+
+          
 
            //// kolizja z przeszkoda
            for (int i = 0; i < listaPrzeszkod.Count; i++)
