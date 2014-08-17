@@ -21,7 +21,7 @@ namespace Super_gra
        //Vector2 gracz;
        public Vector2 pozycja;
        public Vector2 predkoscP;
-       public int predkosc = 450;
+       public int predkosc = 1150;
        public Texture2D pocisk;
        MouseState mysz;
        public float wynikNaX;
