@@ -14,24 +14,35 @@ namespace Super_gra
 {
     class Plansza
     {
-        List<Przeszkoda> listaPrzeszkod;
+        List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
         List<Pocisk> listaPociskow;
         Gracz gracz = new Gracz(Vector2.Zero);
+        Texture2D przeszkoda;
+
 
         public void LoadContent(ContentManager Content)
         {
             gracz.LoadContent(Content);
+            przeszkoda = Content.Load<Texture2D>("Przeszkoda");
         }
 
         public void Update(GameTime gameTime)
         {
             gracz.Update(gameTime, listaPrzeszkod);
+            //listaPrzeszkod.Add(new Przeszkoda(Vector2.Zero));
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
             spriteBatch.Draw(gracz.tekstura, gracz.pozycjaGracza, Color.White);
+            if (listaPrzeszkod.Count > 0)
+            {
+                for (int i = 0; i < listaPrzeszkod.Count; i++)
+                {
+                    spriteBatch.Draw(przeszkoda, new Vector2(listaPrzeszkod[i].pozycjaPrzeszkody.X, listaPrzeszkod[i].pozycjaPrzeszkody.Y), Color.White);
+                }
+            }
             spriteBatch.End();
             
 

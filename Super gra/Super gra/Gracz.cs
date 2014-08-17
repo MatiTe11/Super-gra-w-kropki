@@ -30,6 +30,7 @@ namespace Super_gra
        {
            //this.listaPrzeszkod = listaPrzeszkod;
            this.pozycjaGracza = pozycja;
+           iloscPrzeszkod = 10;
        }
 
        public void LoadContent(ContentManager Content)
@@ -40,6 +41,7 @@ namespace Super_gra
        public void Update(GameTime gameTime, List<Przeszkoda> listaPrzeszkod)
        {
            klawiatura = Keyboard.GetState();
+           prevMysz = mysz;
            mysz = Mouse.GetState();
 
            if (klawiatura.IsKeyDown(Keys.D))
