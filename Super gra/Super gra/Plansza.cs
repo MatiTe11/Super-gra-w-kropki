@@ -39,10 +39,10 @@ namespace Super_gra
         {
             
             gracz.Update(gameTime, listaPrzeszkod);
-            internet.Nadajnik(gracz);
+           // internet.Nadajnik(gracz);
             //internet.PierwszyRaz();
-            internet.Odbiornik(przeciwnik);
-
+            //internet.Odbiornik(przeciwnik);
+            internet.Update(gracz, przeciwnik);
             //listaPrzeszkod.Add(new Przeszkoda(Vector2.Zero));
         }
 
