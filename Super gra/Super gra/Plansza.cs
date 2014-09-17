@@ -17,19 +17,32 @@ namespace Super_gra
         List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
         //List<Pocisk> listaPociskow;
         Gracz gracz = new Gracz(Vector2.Zero);
+        Gracz przeciwnik = new Gracz(Vector2.Zero);
         Texture2D przeszkoda, pocisk;
+        Internety internet = new Internety();
 
 
         public void LoadContent(ContentManager Content)
         {
             gracz.LoadContent(Content);
+            przeciwnik.LoadContent(Content);
             przeszkoda = Content.Load<Texture2D>("Przeszkoda");
             pocisk = Content.Load<Texture2D>("Pocisk");
         }
 
+        public void Init()
+        {
+            internet.PierwszyRaz();
+        }
+
         public void Update(GameTime gameTime)
         {
+            
             gracz.Update(gameTime, listaPrzeszkod);
+            internet.Nadajnik(gracz);
+            //internet.PierwszyRaz();
+            internet.Odbiornik(przeciwnik);
+
             //listaPrzeszkod.Add(new Przeszkoda(Vector2.Zero));
         }
 
@@ -37,6 +50,7 @@ namespace Super_gra
         {
             spriteBatch.Begin();
             spriteBatch.Draw(gracz.tekstura, gracz.pozycjaGracza, Color.White);
+            spriteBatch.Draw(przeciwnik.tekstura, przeciwnik.pozycjaGracza, Color.Black);
             if (listaPrzeszkod.Count > 0)
             {
                 for (int i = 0; i < listaPrzeszkod.Count; i++)

@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gracz.cs" />
+    <Compile Include="Internety.cs" />
     <Compile Include="Plansza.cs" />
     <Compile Include="Pocisk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

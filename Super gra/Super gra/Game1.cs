@@ -47,6 +47,7 @@ namespace Super_gra
         {
             // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
+            plansza.Init();
             base.Initialize();
         }
 
