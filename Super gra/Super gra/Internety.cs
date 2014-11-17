@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Net;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 
 namespace Super_gra
 {
@@ -16,6 +18,8 @@ namespace Super_gra
         StreamReader streamReader;
         StreamWriter streamWriter;
         Stream stream;
+        private static readonly Socket clientSocket = new Socket
+            (AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
 
 
@@ -23,14 +27,16 @@ namespace Super_gra
 
         public void PierwszyRaz()
         {
-            client = new TcpClient(serverIP, 25444);
-            stream = client.GetStream();
-            streamReader = new StreamReader(stream);
-            streamWriter = new StreamWriter(stream);
+            while (!clientSocket.Connected)
+            { clientSocket.Connect(IPAddress.Loopback, 25444); }
+            //client = new TcpClient(serverIP, 25444);
+            //stream = client.GetStream();
+            //streamReader = new StreamReader(stream);
+            //streamWriter = new StreamWriter(stream);
 
-            streamWriter.WriteLine("0");
-            streamWriter.Flush();
-            nrGracza = streamReader.ReadLine();
+            //streamWriter.WriteLine("0");
+            //streamWriter.Flush();
+            //nrGracza = streamReader.ReadLine();
             
         }
 
@@ -39,14 +45,16 @@ namespace Super_gra
         {
             try
             {
-                client = new TcpClient(serverIP, 25444);
-                stream = client.GetStream();
-                streamReader = new StreamReader(stream);
-                streamWriter = new StreamWriter(stream);
-                streamWriter.AutoFlush = true;
+                //client = new TcpClient(serverIP, 25444);
+                //stream = client.GetStream();
+                //streamReader = new StreamReader(stream);
+                //streamWriter = new StreamWriter(stream);
+                //streamWriter.AutoFlush = true;
 
                 string message = nrGracza + "/" + graczObecny.pozycjaGracza.X + "/" + graczObecny.pozycjaGracza.Y;
-                streamWriter.WriteLine(message);
+                byte[] buffer = Encoding.ASCII.GetBytes(message);
+                clientSocket.Send(buffer, 0, buffer.Length, SocketFlags.None);
+                //streamWriter.WriteLine(message);
                 
             }
             catch (Exception e)
@@ -61,15 +69,22 @@ namespace Super_gra
 
             try
             {
-                client = new TcpClient(serverIP, 25444);
-                stream = client.GetStream();
-                streamReader = new StreamReader(stream);
-                streamWriter = new StreamWriter(stream);
-                streamWriter.AutoFlush = true;
+                //client = new TcpClient(serverIP, 25444);
+                //stream = client.GetStream();
+                //streamReader = new StreamReader(stream);
+                //streamWriter = new StreamWriter(stream);
+                //streamWriter.AutoFlush = true;
 
 
-                messageodb = streamReader.ReadLine();
-                string[] podzielone = messageodb.Split('/');
+                //messageodb = streamReader.ReadLine();
+                var buffer = new byte[2048];
+                int received = clientSocket.Receive(buffer, SocketFlags.None);
+                if (received == 0) return;
+                var data = new byte[received];
+                Array.Copy(buffer, data, received);
+                string text = Encoding.ASCII.GetString(data);
+
+                string[] podzielone = text.Split('/');
                 graczRecived.pozycjaGracza.X = float.Parse(podzielone[0]);
                 graczRecived.pozycjaGracza.Y = float.Parse(podzielone[1]);
             }
