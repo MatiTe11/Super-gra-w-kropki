@@ -19,7 +19,7 @@ namespace Super_gra
         Gracz gracz = new Gracz(Vector2.Zero);
         Gracz przeciwnik = new Gracz(Vector2.Zero);
         Texture2D przeszkoda, pocisk;
-        Internety internet = new Internety();
+        //Internety internet = new Internety();
 
 
         public void LoadContent(ContentManager Content)
@@ -32,7 +32,7 @@ namespace Super_gra
 
         public void Init()
         {
-            internet.PierwszyRaz();
+            //internet.PierwszyRaz();
         }
 
         public void Update(GameTime gameTime)
@@ -40,9 +40,9 @@ namespace Super_gra
             
             gracz.Update(gameTime, listaPrzeszkod);
            // internet.Nadajnik(gracz);
-            //internet.PierwszyRaz();
+           // internet.PierwszyRaz();
             //internet.Odbiornik(przeciwnik);
-            internet.Update(gracz, przeciwnik);
+            //internet.Update(gracz, przeciwnik);
             //listaPrzeszkod.Add(new Przeszkoda(Vector2.Zero));
         }
 
